@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@layer components {
+  .save-theme-btn {
+    @apply text-white text-3xl px-8 py-3 rounded-[20px] cursor-pointer font-semibold;
+    @apply border border-4 border-b-6 border-[#333];
+    @apply shadow-[inset_2px_3px_rgba(100,100,100),inset_-2px_3px_rgba(100,100,100)];
+    background: linear-gradient(to bottom, #303131 0%, #494948 100%);
+    transition: all 0.2s ease;
+  }
+
+  .save-theme-btn:hover {
+    background: linear-gradient(to bottom, #555 0%, #333 100%);
+  }
+
+  .save-theme-btn:active {
+    @apply shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)];
+    transform: translateY(2px);
+  }
+}
