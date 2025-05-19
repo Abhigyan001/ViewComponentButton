@@ -1,5 +1,79 @@
 <div class="container mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold mb-8 text-center">Demo Button Component</h1>
+  <h1 class="text-3xl font-bold mb-8">Button Component Demo</h1>
 
-  <%= render(DemoButtonComponent.new(label: "Save theme")) %>
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold mb-4">Save Theme Button</h2>
+    <div class="flex flex-wrap gap-4 items-center">
+      <%= render(DemoButtonComponent.new(label: "Save theme")) %>
+    </div>
+  </section>
+
+  <!-- Sizes -->
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold mb-4">Sizes</h2>
+    <div class="flex flex-wrap gap-4 items-center">
+      <%= render(DemoButtonComponent.new(label: "Small Button", size: :small)) %>
+      <%= render(DemoButtonComponent.new(label: "Medium Button", size: :medium)) %>
+      <%= render(DemoButtonComponent.new(label: "Large Button", size: :large)) %>
+    </div>
+  </section>
+
+  <!-- Styles -->
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold mb-4">Styles</h2>
+    <div class="flex flex-wrap gap-4 items-center">
+      <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal)) %>
+      <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary)) %>
+      <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
+    </div>
+  </section>
+
+  <!-- Colors -->
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold mb-4">Colors</h2>
+    <div class="flex flex-wrap gap-4 items-center">
+      <%= render(DemoButtonComponent.new(label: "Primary", color: :primary)) %>
+      <%= render(DemoButtonComponent.new(label: "Green", color: :green)) %>
+      <%= render(DemoButtonComponent.new(label: "Yellow", color: :yellow)) %>
+      <%= render(DemoButtonComponent.new(label: "Red", color: :red)) %>
+    </div>
+  </section>
+
+
+  <!-- States -->
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold mb-4">States</h2>
+    <div class="mb-6">
+      <h3 class="text-lg font-medium mb-2">Hover State</h3>
+      <p class="text-sm text-gray-600 mb-2">Hover over buttons to see their hover state</p>
+      <div class="flex flex-wrap gap-4 items-center">
+        <%= render(DemoButtonComponent.new(label: "Default Style", style: :default)) %>
+        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal)) %>
+        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary)) %>
+        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
+      </div>
+    </div>
+    
+    <div class="mb-6">
+      <h3 class="text-lg font-medium mb-2">Focus State</h3>
+      <p class="text-sm text-gray-600 mb-2">Tab to focus on buttons to see their focus state</p>
+      <div class="flex flex-wrap gap-4 items-center">
+        <%= render(DemoButtonComponent.new(label: "Default Style", style: :default)) %>
+        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal)) %>
+        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary)) %>
+        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
+      </div>
+    </div>
+    
+    <div class="mb-6">
+      <h3 class="text-lg font-medium mb-2">Active/Pressed State</h3>
+      <p class="text-sm text-gray-600 mb-2">Press and hold to see the active state</p>
+      <div class="flex flex-wrap gap-4 items-center">
+        <%= render(DemoButtonComponent.new(label: "Default Style", style: :default)) %>
+        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal)) %>
+        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary)) %>
+        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
+      </div>
+    </div>
+  </section>
 </div>
