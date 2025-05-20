@@ -20,11 +20,14 @@ class DemoButtonComponent < ViewComponent::Base
     red: "bg-none bg-red-600 hover:bg-red-500 focus:ring-red-500 active:bg-red-700"
   }.freeze
 
-  def initialize(label:, size: nil, style: :nil, color: :nil, type: :button)
+  def initialize(label:, size: nil, style: :nil, color: :nil, icon: nil, icon_position: :left, disabled: false, type: :solid)
     @label = label
     @size = size
     @style = style
     @color = color
+    @icon = icon
+    @icon_position = icon_position
+    @disabled = disabled
     @type = type
   end
 
@@ -33,7 +36,54 @@ class DemoButtonComponent < ViewComponent::Base
     size_classes = SIZES[@size]
     style_classes = STYLES[@style]
     color_classes = COLORS[@color]
+    disabled_classes = @disabled ? "opacity-50 cursor-not-allowed" : ""
 
-    [base_class, size_classes, style_classes, color_classes].join(" ")
+    [base_class, size_classes, style_classes, color_classes, disabled_classes].join(" ")
+  end
+
+  def icon_classes
+    case @size
+    when :small
+      "h-4 w-4"
+    when :large
+      "h-6 w-6"
+    else
+      "h-5 w-5"
+    end
+  end
+
+  def icon_margin
+    return "" unless @icon
+
+    if @icon_position == :left
+      case @size
+      when :small
+        "mr-1"
+      when :large
+        "mr-3"
+      else
+        "mr-2"
+      end
+    else
+      case @size
+      when :small
+        "ml-1"
+      when :large
+        "ml-3"
+      else
+        "ml-2"
+      end
+    end
+  end
+
+  def icon_size
+    case @size
+    when :small
+      :small
+    when :large
+      :large
+    else
+      :medium
+    end
   end
 end

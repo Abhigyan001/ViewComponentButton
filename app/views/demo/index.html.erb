@@ -8,7 +8,6 @@
     </div>
   </section>
 
-  <!-- Sizes -->
   <section class="mb-8">
     <h2 class="text-xl font-semibold mb-4">Sizes</h2>
     <div class="flex flex-wrap gap-4 items-center">
@@ -18,7 +17,6 @@
     </div>
   </section>
 
-  <!-- Styles -->
   <section class="mb-8">
     <h2 class="text-xl font-semibold mb-4">Styles</h2>
     <div class="flex flex-wrap gap-4 items-center">
@@ -28,7 +26,6 @@
     </div>
   </section>
 
-  <!-- Colors -->
   <section class="mb-8">
     <h2 class="text-xl font-semibold mb-4">Colors</h2>
     <div class="flex flex-wrap gap-4 items-center">
@@ -39,10 +36,9 @@
     </div>
   </section>
 
-
-  <!-- States -->
   <section class="mb-8">
     <h2 class="text-xl font-semibold mb-4">States</h2>
+
     <div class="mb-6">
       <h3 class="text-lg font-medium mb-2">Hover State</h3>
       <p class="text-sm text-gray-600 mb-2">Hover over buttons to see their hover state</p>
@@ -53,7 +49,7 @@
         <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
       </div>
     </div>
-    
+
     <div class="mb-6">
       <h3 class="text-lg font-medium mb-2">Focus State</h3>
       <p class="text-sm text-gray-600 mb-2">Tab to focus on buttons to see their focus state</p>
@@ -64,7 +60,7 @@
         <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
       </div>
     </div>
-    
+
     <div class="mb-6">
       <h3 class="text-lg font-medium mb-2">Active/Pressed State</h3>
       <p class="text-sm text-gray-600 mb-2">Press and hold to see the active state</p>
@@ -74,6 +70,53 @@
         <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary)) %>
         <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
       </div>
+    </div>
+
+    <div class="mb-6">
+      <h3 class="text-lg font-medium mb-2">Disabled State</h3>
+      <div class="flex flex-wrap gap-4 items-center">
+        <%= render(DemoButtonComponent.new(label: "Default Style", style: :default, disabled: true)) %>
+        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal, disabled: true)) %>
+        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary, disabled: true)) %>
+        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text, disabled: true)) %>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold mb-4">With Icons</h2>
+    <div class="flex flex-wrap gap-4 items-center">
+      <%= render(DemoButtonComponent.new(label: "Save theme", icon: "document-check", icon_position: :left)) %>
+      <%= render(DemoButtonComponent.new(label: "Next", icon: "arrow-right", icon_position: :right)) %>
+      <%= render(DemoButtonComponent.new(label: "Add Item", icon: "plus")) %>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold mb-4">Icon Variants</h2>
+    <div class="flex flex-wrap gap-4 items-center">
+      <%= render(DemoButtonComponent.new(label: "Solid Icons", icon: "user", type: :solid)) %>
+      <%= render(DemoButtonComponent.new(label: "Outline Icons", icon: "home", type: :outline)) %>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold mb-4">Combined Examples</h2>
+    <div class="flex flex-wrap gap-4 items-center">
+      <%= render(DemoButtonComponent.new(label: "Save theme", size: :medium, style: :default, icon: "document-check")) %>
+      <%= render(DemoButtonComponent.new(label: "Delete", size: :small, style: :primary, color: :red, icon: "trash")) %>
+      <%= render(DemoButtonComponent.new(label: "View more", size: :large, style: :text, icon: "arrow-right", icon_position: :right)) %>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-xl font-semibold mb-4">Common Heroicons</h2>
+    <div class="flex flex-wrap gap-4 items-center">
+      <%= render(DemoButtonComponent.new(label: "Edit", icon: "pencil-square")) %>
+      <%= render(DemoButtonComponent.new(label: "Download", icon: "arrow-down-tray")) %>
+      <%= render(DemoButtonComponent.new(label: "Search", icon: "magnifying-glass")) %>
+      <%= render(DemoButtonComponent.new(label: "Settings", icon: "cog-6-tooth")) %>
+      <%= render(DemoButtonComponent.new(label: "Refresh", icon: "arrow-path")) %>
     </div>
   </section>
 </div>
