@@ -8,16 +8,16 @@ class DemoButtonComponent < ViewComponent::Base
   }.freeze
 
   STYLES = {
-    normal: "bg-none bg-gray-800 hover:bg-gray-700 active:bg-gray-900",
-    primary: "bg-none bg-blue-600 hover:bg-blue-800 active:bg-blue-700 focus:ring-blue-500 border-[#1F51FF]",
-    text: "bg-none bg-transparent hover:bg-gray-100 active:bg-gray-200 text-black"
+    normal: "bg-none bg-gray-800 hover:bg-gray-400 active:animate-bounce focus:outline-4 focus:outline-offset-2 focus:outline-gray-500 shadow-none border-gray-800",
+    primary: "bg-none bg-blue-600 hover:bg-blue-800 active:animate-bounce focus:outline-4 focus:outline-offset-2 focus:outline-blue-500 border-[#1F51FF] shadow-none",
+    text: "bg-none bg-transparent hover:bg-gray-700 hover:text-white active:animate-bounce focus:outline-4 focus:outline-offset-2 focus:outline-gray-800 text-black border-gray-500 shadow-none"
   }.freeze
 
   COLORS = {
-    primary: "bg-none bg-blue-600 hover:bg-blue-800 focus:ring-blue-500 active:bg-blue-700",
-    green: "bg-none bg-green-600 hover:bg-green-500 focus:ring-green-500 active:bg-green-700",
-    yellow: "bg-none bg-yellow-500 hover:bg-yellow-400 focus:ring-yellow-500 active:bg-yellow-600",
-    red: "bg-none bg-red-600 hover:bg-red-500 focus:ring-red-500 active:bg-red-700"
+    primary: "bg-none bg-blue-600 hover:bg-blue-800 focus:outline-4 focus:outline-offset-2 focus:outline-blue-500 border-blue-500 shadow-none",
+    green: "bg-none bg-green-500 hover:bg-green-800 focus:outline-4 focus:outline-offset-2 focus:outline-green-500 border-green-500 shadow-none",
+    yellow: "bg-none bg-yellow-500 hover:bg-yellow-800 focus:outline-4 focus:outline-offset-2 focus:outline-yellow-500 border-yellow-500 shadow-none",
+    red: "bg-none bg-red-500 hover:bg-red-800 focus:outline-4 focus:outline-offset-2 focus:outline-red-500 border-red-500 shadow-none"
   }.freeze
 
   def initialize(label:, size: nil, style: :nil, color: :nil, icon: nil, icon_position: :left, disabled: false, type: :solid)
@@ -36,7 +36,7 @@ class DemoButtonComponent < ViewComponent::Base
     size_classes = SIZES[@size]
     style_classes = STYLES[@style]
     color_classes = COLORS[@color]
-    disabled_classes = @disabled ? "opacity-50 cursor-not-allowed" : ""
+    disabled_classes = @disabled ? "opacity-50 pointer-events-none" : ""
 
     [base_class, size_classes, style_classes, color_classes, disabled_classes].join(" ")
   end

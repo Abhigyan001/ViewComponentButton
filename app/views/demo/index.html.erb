@@ -1,34 +1,34 @@
-<div class="container mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold mb-8">Button Component Demo</h1>
+<div class="container text-center px-4 py-8">
+  <h1 class="text-4xl font-bold mb-8">Button Component Demo</h1>
 
-  <section class="mb-8">
+  <section class="mb-8 text-center ">
     <h2 class="text-xl font-semibold mb-4">Save Theme Button</h2>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <%= render(DemoButtonComponent.new(label: "Save theme")) %>
     </div>
   </section>
 
-  <section class="mb-8">
+  <section class="mb-8 text-center ">
     <h2 class="text-xl font-semibold mb-4">Sizes</h2>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <%= render(DemoButtonComponent.new(label: "Small Button", size: :small)) %>
       <%= render(DemoButtonComponent.new(label: "Medium Button", size: :medium)) %>
       <%= render(DemoButtonComponent.new(label: "Large Button", size: :large)) %>
     </div>
   </section>
 
-  <section class="mb-8">
+  <section class="mb-8 text-center ">
     <h2 class="text-xl font-semibold mb-4">Styles</h2>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal)) %>
       <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary)) %>
       <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
     </div>
   </section>
 
-  <section class="mb-8">
+  <section class="mb-8 text-center ">
     <h2 class="text-xl font-semibold mb-4">Colors</h2>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <%= render(DemoButtonComponent.new(label: "Primary", color: :primary)) %>
       <%= render(DemoButtonComponent.new(label: "Green", color: :green)) %>
       <%= render(DemoButtonComponent.new(label: "Yellow", color: :yellow)) %>
@@ -36,36 +36,12 @@
     </div>
   </section>
 
-  <section class="mb-8">
+  <section class="mb-8 text-center ">
     <h2 class="text-xl font-semibold mb-4">States</h2>
 
     <div class="mb-6">
-      <h3 class="text-lg font-medium mb-2">Hover State</h3>
-      <p class="text-sm text-gray-600 mb-2">Hover over buttons to see their hover state</p>
-      <div class="flex flex-wrap gap-4 items-center">
-        <%= render(DemoButtonComponent.new(label: "Default Style", style: :default)) %>
-        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal)) %>
-        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary)) %>
-        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
-      </div>
-    </div>
-
-    <div class="mb-6">
-      <h3 class="text-lg font-medium mb-2">Focus State</h3>
-      <p class="text-sm text-gray-600 mb-2">Tab to focus on buttons to see their focus state</p>
-      <div class="flex flex-wrap gap-4 items-center">
-        <%= render(DemoButtonComponent.new(label: "Default Style", style: :default)) %>
-        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal)) %>
-        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary)) %>
-        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
-      </div>
-    </div>
-
-    <div class="mb-6">
-      <h3 class="text-lg font-medium mb-2">Active/Pressed State</h3>
-      <p class="text-sm text-gray-600 mb-2">Press and hold to see the active state</p>
-      <div class="flex flex-wrap gap-4 items-center">
-        <%= render(DemoButtonComponent.new(label: "Default Style", style: :default)) %>
+      <h3 class="text-lg font-medium mb-2">Interact with the buttons</h3>
+      <div class="flex flex-wrap gap-4 items-center justify-center">
         <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal)) %>
         <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary)) %>
         <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
@@ -74,8 +50,7 @@
 
     <div class="mb-6">
       <h3 class="text-lg font-medium mb-2">Disabled State</h3>
-      <div class="flex flex-wrap gap-4 items-center">
-        <%= render(DemoButtonComponent.new(label: "Default Style", style: :default, disabled: true)) %>
+      <div class="flex flex-wrap gap-4 items-center justify-center">
         <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal, disabled: true)) %>
         <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary, disabled: true)) %>
         <%= render(DemoButtonComponent.new(label: "Text Button", style: :text, disabled: true)) %>
@@ -83,26 +58,26 @@
     </div>
   </section>
 
-  <section class="mb-8">
+  <section class="mb-8 text-center ">
     <h2 class="text-xl font-semibold mb-4">With Icons</h2>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <%= render(DemoButtonComponent.new(label: "Save theme", icon: "document-check", icon_position: :left)) %>
       <%= render(DemoButtonComponent.new(label: "Next", icon: "arrow-right", icon_position: :right)) %>
       <%= render(DemoButtonComponent.new(label: "Add Item", icon: "plus")) %>
     </div>
   </section>
 
-  <section class="mb-8">
+  <section class="mb-8 text-center ">
     <h2 class="text-xl font-semibold mb-4">Icon Variants</h2>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <%= render(DemoButtonComponent.new(label: "Solid Icons", icon: "user", type: :solid)) %>
       <%= render(DemoButtonComponent.new(label: "Outline Icons", icon: "home", type: :outline)) %>
     </div>
   </section>
 
-  <section class="mb-8">
+  <section class="mb-8 text-center ">
     <h2 class="text-xl font-semibold mb-4">Combined Examples</h2>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <%= render(DemoButtonComponent.new(label: "Save theme", size: :medium, style: :default, icon: "document-check")) %>
       <%= render(DemoButtonComponent.new(label: "Delete", size: :small, style: :primary, color: :red, icon: "trash")) %>
       <%= render(DemoButtonComponent.new(label: "View more", size: :large, style: :text, icon: "arrow-right", icon_position: :right)) %>
@@ -111,7 +86,7 @@
 
   <section class="mb-8">
     <h2 class="text-xl font-semibold mb-4">Common Heroicons</h2>
-    <div class="flex flex-wrap gap-4 items-center">
+    <div class="flex flex-wrap gap-4 items-center justify-center">
       <%= render(DemoButtonComponent.new(label: "Edit", icon: "pencil-square")) %>
       <%= render(DemoButtonComponent.new(label: "Download", icon: "arrow-down-tray")) %>
       <%= render(DemoButtonComponent.new(label: "Search", icon: "magnifying-glass")) %>
