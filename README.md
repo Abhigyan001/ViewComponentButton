@@ -2,9 +2,9 @@
 
 This project demonstrates a highly customizable button component built with Rails 8, View Components, and TailwindCSS v4.
 
-## Project Demo
+## Project Installation & Demo:
 
-
+https://github.com/user-attachments/assets/5f6067f4-95a1-4e72-8f30-18e15e512596
 
 ## Build-With
 
