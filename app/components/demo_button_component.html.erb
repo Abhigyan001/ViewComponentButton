@@ -1,7 +1,5 @@
 <button
-  class="<%= classes %> flex items-center justify-center gap-2"
-  <%= "disabled" if @disabled %>
->
+  class="<%= classes %> flex items-center justify-center gap-2">
   <% if @icon && @icon_position == :left %>
     <%= heroicon(@icon, type: @type, class: "#{icon_classes} #{icon_margin}") %>
   <% end %>

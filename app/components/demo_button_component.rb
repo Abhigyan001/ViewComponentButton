@@ -8,27 +8,35 @@ class DemoButtonComponent < ViewComponent::Base
   }.freeze
 
   STYLES = {
-    normal: "bg-none bg-gray-800 hover:bg-gray-400 active:animate-bounce focus:outline-4 focus:outline-offset-2 focus:outline-gray-500 shadow-none border-gray-800",
-    primary: "bg-none bg-blue-600 hover:bg-blue-800 active:animate-bounce focus:outline-4 focus:outline-offset-2 focus:outline-blue-500 border-[#1F51FF] shadow-none",
-    text: "bg-none bg-transparent hover:bg-gray-700 hover:text-white active:animate-bounce focus:outline-4 focus:outline-offset-2 focus:outline-gray-800 text-black border-gray-500 shadow-none"
+    normal: "bg-none bg-gray-800 shadow-none border-gray-800",
+    primary: "bg-none bg-blue-600 border-[#1F51FF] shadow-none",
+    text: "bg-none bg-transparent text-black border-gray-500 shadow-none"
   }.freeze
 
   COLORS = {
-    primary: "bg-none bg-blue-600 hover:bg-blue-800 focus:outline-4 focus:outline-offset-2 focus:outline-blue-500 border-blue-500 shadow-none",
-    green: "bg-none bg-green-500 hover:bg-green-800 focus:outline-4 focus:outline-offset-2 focus:outline-green-500 border-green-500 shadow-none",
-    yellow: "bg-none bg-yellow-500 hover:bg-yellow-800 focus:outline-4 focus:outline-offset-2 focus:outline-yellow-500 border-yellow-500 shadow-none",
-    red: "bg-none bg-red-500 hover:bg-red-800 focus:outline-4 focus:outline-offset-2 focus:outline-red-500 border-red-500 shadow-none"
+    primary: "bg-none bg-blue-600 border-blue-500 shadow-none",
+    green: "bg-none bg-green-500  border-green-500 shadow-none",
+    yellow: "bg-none bg-yellow-500 border-yellow-500 shadow-none",
+    red: "bg-none bg-red-500 border-red-500 shadow-none"
   }.freeze
 
-  def initialize(label:, size: nil, style: :nil, color: :nil, icon: nil, icon_position: :left, disabled: false, type: :solid)
+  STATES = {
+    focus: "focus:outline-4 focus:outline-offset-2",
+    hover: "cursor-pointer",
+    active: "active:animate-bounce",
+    disabled: "opacity-50 pointer-events-none"
+  }.freeze
+
+  def initialize(label:, size: '', style: '', color: '', state: '', icon: nil, icon_position: :left, type: :solid, custom_classes: '')
     @label = label
     @size = size
     @style = style
     @color = color
+    @state = state
     @icon = icon
     @icon_position = icon_position
-    @disabled = disabled
     @type = type
+    @custom_classes = custom_classes
   end
 
   def classes
@@ -36,9 +44,9 @@ class DemoButtonComponent < ViewComponent::Base
     size_classes = SIZES[@size]
     style_classes = STYLES[@style]
     color_classes = COLORS[@color]
-    disabled_classes = @disabled ? "opacity-50 pointer-events-none" : ""
+    state_classes = STATES[@state]
 
-    [base_class, size_classes, style_classes, color_classes, disabled_classes].join(" ")
+    [base_class, size_classes, style_classes, color_classes, state_classes, @custom_classes].compact.join(" ")
   end
 
   def icon_classes

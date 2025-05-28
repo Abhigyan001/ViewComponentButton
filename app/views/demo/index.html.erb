@@ -40,20 +40,38 @@
     <h2 class="text-xl font-semibold mb-4">States</h2>
 
     <div class="mb-6">
-      <h3 class="text-lg font-medium mb-2">Interact with the buttons</h3>
+      <h3 class="text-lg font-medium mb-2">Focus State</h3>
       <div class="flex flex-wrap gap-4 items-center justify-center">
-        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal)) %>
-        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary)) %>
-        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text)) %>
+        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal, state: :focus, custom_classes: "focus:outline-blue-900")) %>
+        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary, state: :focus, custom_classes: "focus:outline-blue-500")) %>
+        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text, state: :focus)) %>
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <h3 class="text-lg font-medium mb-2">Hover State</h3>
+      <div class="flex flex-wrap gap-4 items-center justify-center">
+        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal, state: :hover, custom_classes: "hover:bg-blue-400 hover:text-white")) %>
+        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary, state: :hover, custom_classes: "hover:bg-blue-800")) %>
+        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text, state: :hover, custom_classes: "hover:bg-gray-400 hover:text-white")) %>
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <h3 class="text-lg font-medium mb-2">Active State</h3>
+      <div class="flex flex-wrap gap-4 items-center justify-center">
+        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal, state: :active)) %>
+        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary, state: :active)) %>
+        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text, state: :active)) %>
       </div>
     </div>
 
     <div class="mb-6">
       <h3 class="text-lg font-medium mb-2">Disabled State</h3>
       <div class="flex flex-wrap gap-4 items-center justify-center">
-        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal, disabled: true)) %>
-        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary, disabled: true)) %>
-        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text, disabled: true)) %>
+        <%= render(DemoButtonComponent.new(label: "Normal Button", style: :normal, state: :disabled)) %>
+        <%= render(DemoButtonComponent.new(label: "Primary Button", style: :primary, state: :disabled)) %>
+        <%= render(DemoButtonComponent.new(label: "Text Button", style: :text, state: :disabled)) %>
       </div>
     </div>
   </section>
@@ -80,7 +98,7 @@
     <div class="flex flex-wrap gap-4 items-center justify-center">
       <%= render(DemoButtonComponent.new(label: "Save theme", size: :medium, style: :default, icon: "document-check")) %>
       <%= render(DemoButtonComponent.new(label: "Delete", size: :small, style: :primary, color: :red, icon: "trash")) %>
-      <%= render(DemoButtonComponent.new(label: "View more", size: :large, style: :text, icon: "arrow-right", icon_position: :right)) %>
+      <%= render(DemoButtonComponent.new(label: "View more", size: :large, style: :text, icon: "arrow-right", icon_position: :right, state: :focus)) %>
     </div>
   </section>
 
